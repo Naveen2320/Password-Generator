@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password.com</title>
+    <link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">-->
+    <!--<script src="https://cdn.tailwindcss.com"></script>-->
+</head>
+<body>
+    <!--wrapper-->
+    <div class = "container">
+        <!--password heading tag-->
+        <h1>PASSWORD GENERATOR</h1>
+        <!-- copied container-->
+        <div class="display-container">
+
+            <input readonly placeholder="password" class="display" data-passwordDisplay>
+            <button class="copybtn" data-copyButton>
+                <span class="toolkit" data-copyMsg></span>
+                <img  src="colorkit2.svg" alt="copy" width="23" height="23">
+            </button>
+
+        </div>
+        <!--value increment-->
+        <div class="input-container">
+            <div class="length-container">
+                <p>Password Length</p>
+                <p data-length>0</p>
+            </div>
+        <!--slider-->
+            <input type="range" min="0" max="20" class="slider" step="1" data-lengthSlider>
+        <!-- 1 checkbox-->
+            <div class="check">
+                <input type="checkbox" id="uppercase">
+                <label for="uppercase">Includes Uppercase letters</label>
+            </div>
+        <!-- 2 checkbox-->
+            <div class="check">
+                <input type="checkbox" id="lowercase">
+                <label for="lowercase">Includes Lowercase letters</label>
+            </div>
+        <!-- 3 check box-->
+            <div class="check">
+                <input type="checkbox" id="numbers">
+                <label for="numbers">Includes Numbers</label>
+            </div>
+        <!-- 4 check box-->
+            <div class="check">
+                <input type="checkbox" id="symbols">
+                <label for="symbols">Includes Symbols</label>
+            </div>
+
+        <!--strength section-->
+            <div class="strength-container">
+                <p>Strength</p>
+                <div class="circle " data-indicator></div>
+            </div>
+        <!--button-->
+            <div>
+                <button class="generatepass" >GENERATE PASSWORD</button>
+            </div>
+            
+        </div>
+
+    </div>
+    <script src = "mini.js"></script>
+</body>
+</html>

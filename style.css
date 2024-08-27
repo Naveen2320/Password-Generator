@@ -1,0 +1,240 @@
+/*setting universal selector*/
+
+*,
+*::before,
+*::after {
+   padding:0;
+   margin:0;
+   box-sizing:border-box;
+   font-family: sans-serif; 
+}
+:root{
+   --vb-violet2: hsl(281,89%,26%);
+   --lt-violet: hsl(281,89%,26%);
+}
+
+body {
+   width: 100vw;
+   height: 100vh;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   /*background: linear-gradient(90deg, rgba(244, 0, 255, 1) 0%, rgba(255, 0, 0, 1) 100%);*/
+   /*background: linear-gradient(90deg, rgba(76, 175, 80, 1) 0%, rgba(49, 220, 255, 1) 100%);*/
+   background: linear-gradient(90deg, rgba(238, 130, 238, 1) 0%, rgba(0, 209, 255, 1) 100%);
+}
+
+.container{
+   width : 90%;
+   max-width : 450px;
+}
+
+h1{
+   color:black;
+   opacity:0.75;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   text-align: center;
+   line-height: 1.2;
+}
+
+.display-container{
+   position: relative;
+   background-color: blueviolet;
+   border-radius: 1rem;
+   border-bottom: 0.35rem solid yellow;
+   margin: 1rem 0;
+   padding-top:0.35rem;
+}
+
+.display{
+   width : 100%;
+   background-color: transparent;
+   padding:1.15rem 1rem;
+   color:yellow;
+   font-weight: 600;
+   font-size: 1.5rem;
+   line-height:30px;
+   letter-spacing: 1px;
+   padding-right: 3.25rem;
+   border:none;
+}
+
+.display::placeholder{
+   position : absolute;
+   color:yellow;
+   top:50%;
+   left: 1.5rem;
+   font-size: 1.5rem;
+   line-height: 30px;
+   opacity : 0.65;
+   text-transform :uppercase;
+   transform : translateY(-50%);
+}
+
+.display-container button{
+   position : absolute;
+   top:50%;
+   right:1.5rem;
+   transform : translateY(-50%);
+}
+
+.input-container{
+   width :100%;
+   background-color:#008B8B;
+   border-radius:1rem;
+   padding: 2rem;
+   border-bottom: 0.35rem solid orange;
+}
+
+.length-container{
+   display:flex;
+   align-items: center;
+   justify-content:space-between;
+}
+
+.length-container p:nth-child(1){
+   color:black;
+   font-size: 1.5rem;
+   font-weight: bold;
+}
+
+.length-container p:nth-child(2){
+   color:yellow;
+   font-size:1.5rem;
+}
+
+.strength-container{
+   display:flex;
+   align-items:center;
+   justify-content: space-between;
+   margin-top: 1.75rem;
+   margin-bottom: 2rem;
+}
+.strength-container p{
+   font-size:1.75rem;
+   font-weight: bold;
+   color:#800000;
+
+}
+.strength-container div{
+   height : 1.5rem;
+   width : 1.5rem;
+   border-radius:50%;
+
+}
+
+
+.generatepass{
+   width:100%;
+   padding:1rem 0;
+   background-color: blueviolet;
+   text-align:center;
+   border-radius:0.75rem;
+   border-bottom:0.35rem solid yellow;
+   text-transform:uppercase;
+   letter-spacing:1px;
+   color:yellow;
+   font-weight : 600;
+   font-size:1.25rem;
+}
+
+/* checkbox*/
+.check{
+   display : flex;
+   align-items : center;
+   margin : 1rem 0;
+   gap: 0 1rem;
+}
+.check input{
+   appearance: none;
+   width:20px;
+   height:20px;
+   border:2px solid black;
+   cursor: pointer;
+   position:relative;
+   border-radius: 0.35rem;
+}
+.check input:checked{
+   background-color:aqua;
+}
+
+.check input:checked::before{
+   content:'✓';
+   position: absolute;
+   color:blue;
+   font-size:1.05rem;
+   font-weight:600;
+   left:50%;
+   top:-3.5px;
+   transform:translateX(-90%) translateX(40%);
+}
+.check label{
+   color:black;
+   font-size:1.25rem;
+   letter-spacing:0.75px;
+}
+
+/* slider*/
+.slider{
+   appearance: none;
+   width:100%;
+   height:0.75rem;
+   cursor:pointer;
+   background-color: var(--vb-violet2);
+   border-radius:1rem;
+   margin-top:2rem;
+   margin-bottom:1.5rem;
+   background: linear-gradient(var(--vb-violet2),var(--vb-violet2));
+   background-repeat: no-repeat;
+   border:none;
+   outline:none;
+}
+
+.slider::-webkit-slider-thumb {
+   position: relative;
+   appearance: none;
+   height:2rem;
+   width:2rem;
+   border-radius:50%;
+   background-color: #FFD700;
+   cursor: pointer;
+   margin-top:-3px;
+   box-shadow: 0px 0px 20px 1px rgba(255, 229, 61, 1);
+   transition: all 100ms ease-in;
+   z-index: 1;
+}
+.slider:focus{
+   outline:3px solid #000080 ;
+}
+.slider::-webkit-slider-thumb:hover{
+   outline:2px solid #00FFFF;
+   background-color: #000000;
+   box-shadow: 0px 0px 25px 5px rgb(255, 102, 0);
+}
+.copybtn{
+   background-color: transparent;
+   border :none;
+   outline: none;
+   }
+
+.toolkit{
+   position:absolute;
+   background-color: purple;
+   color:yellow;
+   font-size: 1.25rem;
+   top:-35px;
+   left:-25px;
+   padding: 5px 10px;
+   border-radius: 1rem;
+   opacity: 0;
+   transform: scale(0);
+   transform-origin: bottom;
+   transition: all 250ms ease-in-out;
+}
+.toolkit.active{
+   opacity: 1;
+   transform:scale(1);
+}
+
